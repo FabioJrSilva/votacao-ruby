@@ -1,0 +1,25 @@
+<!DOCTYPE  html>
+<html>
+  <head>
+    <meta  charset='UTF-8'  />
+    <title>Eleições</title>
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" 
+        rel="stylesheet" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" 
+        crossorigin="anonymous">
+  </head>
+  <body  class='container'>
+    <p class='h3'>O  que  iremos  jantar?</p>
+    <form  action='cast'  method='post'>
+      <ul  class='list-unstyled'>
+        <% Choices.each do  |id,  text|  %>
+          <li>
+            <label  class='radio'>
+              <input  type='radio'  name='vote'  value='<%=  id  %>'  id='vote_<%=  id  %>'  /><%=  text  %>
+            </label>
+          </li>
+        <%  end  %>
+      </ul>
+      <button  type='submit'  class='btn btn-outline-success'>Vote!</button>
+    </form>
+  </body>
+</html>
